@@ -1,0 +1,5 @@
+1;Laboratório 101;Laboratório;40;Com projetor e 20 computadores
+2;Quadra Coberta;Quadra;200;Iluminação noturna e arquibancada
+3;Auditório Central;Auditório;300;Com sistema de som e projetor
+4;Sala de Reunião 1;Sala de Reunião;12;Com TV e mesa redonda
+5;Sala 203;Sala de Aula;45;Equipamento multimídia

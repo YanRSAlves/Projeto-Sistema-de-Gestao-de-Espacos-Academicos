@@ -1,0 +1,11 @@
+Main.class
+UsuarioDAO.class
+ExportadorCSV.class
+LogDAO.class
+ReservaDAO.class
+ComprovanteDAO.class
+RelatorioEstatistico.class
+EspacoDAO.class
+Reserva.class
+Usuario.class
+Espaco.class
