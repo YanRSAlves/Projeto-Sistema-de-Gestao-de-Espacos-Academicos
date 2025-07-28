@@ -1,7 +1,0 @@
-[2025-07-22 09:01] Usuario ID 1 fez login
-[2025-07-22 09:03] Usuario ID 1 reservou espaço ID 2
-[2025-07-23 10:22] Usuario ID 2 reservou espaço ID 1
-[2025-07-23 11:11] Usuario ID 3 fez login
-[2025-07-23 11:12] Usuario ID 3 reservou espaço ID 4
-[2025-07-23 14:00] Usuario ID 4 gerou relatório de reservas
-[2025-07-27 20:21] Usuario ID 4 fez login

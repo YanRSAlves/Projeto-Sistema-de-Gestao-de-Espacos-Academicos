@@ -1,4 +1,0 @@
-1;João da Silva;joao@email.com;123456;admin
-2;Maria Souza;maria@email.com;abc123;usuario
-3;Carlos Lima;carlos@email.com;senha321;usuario
-4;Ana Paula;ana@email.com;pass456;admin
