@@ -244,7 +244,7 @@ public class Main {
     private static void fazerReserva(Usuario usuario) {
     System.out.println("\n--- Fazer Reserva ---");
     
-    // MELHORIA: Listando os espaços antes de pedir o ID
+    // Listando os espaços antes de pedir o ID
     System.out.println("Espaços disponíveis:");
     List<Espaco> espacos = EspacoDAO.listarEspacos();
     if (espacos.isEmpty()) {
@@ -259,7 +259,6 @@ public class Main {
     int idEspaco = sc.nextInt();
     sc.nextLine(); // Limpar buffer
 
-    // SUA SOLICITAÇÃO: Mudança no formato da data
     System.out.print("Data (dd/mm/yyyy): ");
     String data = sc.nextLine();
     

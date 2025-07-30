@@ -5,21 +5,15 @@ import java.sql.Statement;
 import java.sql.PreparedStatement; 
 import java.sql.ResultSet;        
 
-/**
- * Classe responsável por gerenciar a conexão com o banco de dados SQLite
- * e inicializar a estrutura de tabelas.
+/*
+ Classe responsável por gerenciar a conexão com o banco de dados SQLite
+ e inicializar a estrutura de tabelas.
  */
 public class Database {
-    // Define o nome do arquivo do banco de dados que será criado na pasta do projeto.
     private static final String NOME_BANCO = "gestao_espacos.db";
-    // Define a URL de conexão completa para o JDBC do SQLite.
+    //URL de conexão completa para o JDBC do SQLite.
     private static final String URL = "jdbc:sqlite:" + NOME_BANCO;
 
-    /**
-     * Obtém uma conexão ativa com o banco de dados.
-     * Este é o método que todas as classes DAO usarão para se comunicar com o banco.
-     * @return um objeto Connection, ou null em caso de falha.
-     */
     public static Connection conectar() {
         try {
             return DriverManager.getConnection(URL);
@@ -29,12 +23,8 @@ public class Database {
         }
     }
 
-    /**
-     * Cria as tabelas do banco de dados se elas ainda não existirem.
-     * Este método deve ser chamado uma vez, na inicialização do sistema.
-     */
     public static void inicializar() {
-        // SQL para criar a tabela de usuários
+        //tabela de usuários
         String sqlUsuarios = "CREATE TABLE IF NOT EXISTS usuarios (" +
                              "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                              "nome TEXT NOT NULL," +
@@ -42,17 +32,17 @@ public class Database {
                              "senha TEXT NOT NULL," +
                              "tipo TEXT NOT NULL);";
 
-        // SQL para criar a tabela de espaços, já com as colunas para herança
+        //tabela de espaços, já com as colunas para herança
         String sqlEspacos = "CREATE TABLE IF NOT EXISTS espacos (" +
                             "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                             "nome TEXT NOT NULL," +
                             "tipo TEXT NOT NULL," +
                             "capacidade INTEGER NOT NULL," +
                             "descricao TEXT," +
-                            "lista_equipamentos TEXT," +      // Campo para Laboratorio
-                            "possui_projetor BOOLEAN);";     // Campo para Auditorio
+                            "lista_equipamentos TEXT," +      //Laboratorio
+                            "possui_projetor BOOLEAN);";     //Auditorio
 
-        // SQL para criar a tabela de reservas
+        //tabela de reservas
         String sqlReservas = "CREATE TABLE IF NOT EXISTS reservas (" +
                              "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                              "id_usuario INTEGER NOT NULL," +
@@ -63,14 +53,14 @@ public class Database {
                              "FOREIGN KEY (id_usuario) REFERENCES usuarios(id)," +
                              "FOREIGN KEY (id_espaco) REFERENCES espacos(id));";
 
-        // SQL para criar a tabela de logs
+        //tabela de logs
         String sqlLogs = "CREATE TABLE IF NOT EXISTS logs (" +
                          "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                          "timestamp TEXT NOT NULL," +
                          "id_usuario INTEGER NOT NULL," +
                          "acao TEXT NOT NULL);";
 
-        // Usando try-with-resources para garantir que a conexão e o statement sejam fechados
+        //Usando try-with-resources para garantir que a conexão e o statement sejam fechados
         try (Connection conn = conectar();
              Statement stmt = conn.createStatement()) {
             
@@ -91,7 +81,7 @@ public class Database {
     }
     
     public static void popularDadosIniciais() {
-        // --- Bloco para verificar e inserir o usuário ---
+        //verificar e inserir o usuário 
         String sqlVerificaUsuario = "SELECT COUNT(*) FROM usuarios WHERE email = ?;";
         String sqlInsereUsuario = "INSERT INTO usuarios(nome, email, senha, tipo) VALUES(?, ?, ?, ?);";
 
@@ -101,7 +91,7 @@ public class Database {
             pstmtVerifica.setString(1, "admin@email.com");
             ResultSet rs = pstmtVerifica.executeQuery();
 
-            // Se a contagem de usuários 'admin@email.com' for 0, insere
+            //se a contagem de usuários 'admin@email.com' for 0, insere o admin
             if (rs.next() && rs.getInt(1) == 0) {
                 try (PreparedStatement pstmtInsere = conn.prepareStatement(sqlInsereUsuario)) {
                     pstmtInsere.setString(1, "Administrador");
@@ -116,7 +106,7 @@ public class Database {
             System.err.println("Erro ao popular usuário inicial: " + e.getMessage());
         }
 
-        // --- Bloco separado para verificar e inserir o espaço ---
+        //verificar e inserir o espaço 
         String sqlVerificaEspaco = "SELECT COUNT(*) FROM espacos WHERE id = ?;";
         String sqlInsereEspaco = "INSERT INTO espacos(id, nome, tipo, capacidade, descricao) VALUES(?, ?, ?, ?, ?);";
 

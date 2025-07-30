@@ -17,11 +17,8 @@ public class EspacoDAO {
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
-            // O laço while percorre cada linha retornada pelo banco de dados
+            //percorre cada linha retornada pelo banco de dados
             while (rs.next()) {
-                // ADICIONE ESTA LINHA DE DEPURAÇÃO AQUI
-                //System.out.println("DEBUG: Linha encontrada na tabela espacos -> ID: " + rs.getInt("id") + ", Tipo: " + rs.getString("tipo"));
-                
                 espacos.add(criarEspacoDoResultSet(rs));
             }
         } catch (SQLException e) {
@@ -30,7 +27,7 @@ public class EspacoDAO {
         return espacos;
     }
 
-    // MÉTODO BUSCAR POR ID ATUALIZADO
+    //MÉTODO BUSCAR POR ID ATUALIZADO
     public static Espaco buscarPorId(int id) {
         String sql = "SELECT * FROM espacos WHERE id = ?;";
         try (Connection conn = Database.conectar();
@@ -47,7 +44,7 @@ public class EspacoDAO {
         return null;
     }
 
-    // MÉTODO ADICIONAR ATUALIZADO
+    //MÉTODO ADICIONAR ATUALIZADO
     public static void adicionarEspaco(Espaco e) {
         String sql = "INSERT INTO espacos(nome, tipo, capacidade, descricao, lista_equipamentos, possui_projetor) VALUES(?, ?, ?, ?, ?, ?);";
         try (Connection conn = Database.conectar();
@@ -60,7 +57,7 @@ public class EspacoDAO {
         }
     }
 
-    // MÉTODO ATUALIZAR ATUALIZADO
+    //MÉTODO ATUALIZAR ATUALIZADO
     public static void atualizarEspaco(Espaco e) {
         String sql = "UPDATE espacos SET nome = ?, tipo = ?, capacidade = ?, descricao = ?, lista_equipamentos = ?, possui_projetor = ? WHERE id = ?;";
         try (Connection conn = Database.conectar();
@@ -74,7 +71,7 @@ public class EspacoDAO {
         }
     }
 
-    // MÉTODO DELETAR (continua igual)
+    //MÉTODO DELETAR 
     public static void deletarEspaco(int id) {
         String sql = "DELETE FROM espacos WHERE id = ?;";
         try (Connection conn = Database.conectar();
@@ -91,8 +88,6 @@ public class EspacoDAO {
             System.err.println("Possível causa: O espaço pode ter reservas ativas.");
         }
     }
-
-    // --- MÉTODOS AUXILIARES ---
 
     // NOVO MÉTODO AUXILIAR PARA CRIAR O OBJETO CORRETO
     private static Espaco criarEspacoDoResultSet(ResultSet rs) throws SQLException {
@@ -114,14 +109,14 @@ public class EspacoDAO {
     }
 }
 
-    // NOVO MÉTODO AUXILIAR PARA PREPARAR O STATEMENT DE INSERT/UPDATE
+    //NOVO MÉTODO AUXILIAR PARA PREPARAR O STATEMENT DE INSERT/UPDATE
     private static void prepararStatementParaEspaco(PreparedStatement pstmt, Espaco e) throws SQLException {
         pstmt.setString(1, e.getNome());
         pstmt.setString(2, e.getTipo());
         pstmt.setInt(3, e.getCapacidade());
         pstmt.setString(4, e.getDescricao());
 
-        // Verifica o tipo do objeto para salvar os dados específicos
+        //Verifica o tipo do objeto para salvar os dados específicos
         if (e instanceof Laboratorio) {
             Laboratorio lab = (Laboratorio) e;
             pstmt.setString(5, lab.getListaEquipamentos());
@@ -131,7 +126,7 @@ public class EspacoDAO {
             pstmt.setNull(5, java.sql.Types.VARCHAR); // Coluna de equipamentos fica nula
             pstmt.setBoolean(6, aud.isPossuiProjetor());
         } else {
-            // Para outros tipos de espaço, salvamos os campos extras como nulos
+            //Para outros tipos de espaço, salvamos os campos extras como nulos
             pstmt.setNull(5, java.sql.Types.VARCHAR);
 
             pstmt.setNull(6, java.sql.Types.BOOLEAN);

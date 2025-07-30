@@ -8,10 +8,6 @@ import java.util.List;
 
 public class UsuarioDAO {
 
-    /**
-     * Lista todos os usuários cadastrados no banco de dados.
-     * @return uma lista de objetos Usuario.
-     */
     public static List<Usuario> listarUsuarios() {
         List<Usuario> usuarios = new ArrayList<>();
         // Query SQL para selecionar todos os usuários
@@ -40,12 +36,7 @@ public class UsuarioDAO {
         return usuarios;
     }
 
-    /**
-     * Busca um usuário específico pelo email e senha para fins de login.
-     * @param email O email do usuário.
-     * @param senha A senha do usuário.
-     * @return um objeto Usuario se encontrado, caso contrário, null.
-     */
+    
     public static Usuario buscarPorEmailESenha(String email, String senha) {
         // Query SQL para buscar um usuário com email e senha específicos.
         // Usamos '?' como placeholders para evitar SQL Injection.
@@ -77,11 +68,6 @@ public class UsuarioDAO {
         return null;
     }
 
-    /**
-     * Adiciona um novo usuário ao banco de dados.
-     * O ID do usuário é gerenciado pelo AUTOINCREMENT do banco.
-     * @param u O objeto Usuario a ser adicionado.
-     */
     public static void adicionarUsuario(Usuario u) {
         // Query SQL para inserir um novo usuário. O ID não é necessário.
         String sql = "INSERT INTO usuarios(nome, email, senha, tipo) VALUES(?, ?, ?, ?);";
@@ -104,11 +90,6 @@ public class UsuarioDAO {
         }
     }
     
-    /**
-     * Busca um usuário pelo seu ID.
-     * @param id O ID do usuário a ser buscado.
-     * @return um objeto Usuario se encontrado, caso contrário, null.
-     */
     public static Usuario buscarPorId(int id) {
         String sql = "SELECT * FROM usuarios WHERE id = ?;";
 
@@ -134,10 +115,6 @@ public class UsuarioDAO {
         return null;
     }
 
-    /**
-     * Atualiza os dados de um usuário existente no banco de dados.
-     * @param u O objeto Usuario com os dados atualizados.
-     */
     public static void atualizarUsuario(Usuario u) {
         String sql = "UPDATE usuarios SET nome = ?, email = ?, senha = ?, tipo = ? WHERE id = ?;";
 
@@ -158,10 +135,6 @@ public class UsuarioDAO {
         }
     }
     
-    /**
-     * Deleta um usuário do banco de dados com base no seu ID.
-     * @param id O ID do usuário a ser deletado.
-     */
     public static void deletarUsuario(int id) {
         String sql = "DELETE FROM usuarios WHERE id = ?;";
 

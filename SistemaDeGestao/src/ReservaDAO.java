@@ -8,10 +8,6 @@ import java.util.List;
 
 public class ReservaDAO {
 
-    /**
-     * Lista todas as reservas cadastradas no banco de dados.
-     * @return uma lista de objetos Reserva.
-     */
     public static List<Reserva> listarReservas() {
         List<Reserva> reservas = new ArrayList<>();
         String sql = "SELECT * FROM reservas;";
@@ -37,12 +33,7 @@ public class ReservaDAO {
         return reservas;
     }
 
-    /**
-     * Adiciona uma nova reserva ao banco de dados. O ID da reserva é gerado pelo banco.
-     * @param r O objeto Reserva a ser adicionado.
-     */
     public static void adicionarReserva(Reserva r) {
-        // Note que não incluímos o 'id' na query de inserção.
         String sql = "INSERT INTO reservas(id_usuario, id_espaco, data, hora_inicio, hora_fim) VALUES(?, ?, ?, ?, ?);";
 
         try (Connection conn = Database.conectar();

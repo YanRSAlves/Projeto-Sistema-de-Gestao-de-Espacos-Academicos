@@ -3,14 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/TelaEdicaoUsuario.java</file>
-            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/TelaCadastroEspaco.java</file>
+            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/Espaco.java</file>
+            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/EspacoDAO.java</file>
+            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/RelatorioEstatistico.java</file>
+            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/LogDAO.java</file>
+            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/Usuario.java</file>
+            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/ComprovanteDAO.java</file>
+            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/ReservaDAO.java</file>
             <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/TelaUsuario.java</file>
             <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/TelaNovaReserva.java</file>
-            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/TelaEdicaoEspaco.java</file>
+            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/Reserva.java</file>
             <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/TelaLogin.java</file>
+            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/Database.java</file>
+            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/UsuarioDAO.java</file>
+            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/TelaEdicaoUsuario.java</file>
+            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/TelaCadastroEspaco.java</file>
+            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/EspacoGeral.java</file>
+            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/Laboratorio.java</file>
+            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/TelaEdicaoEspaco.java</file>
             <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/Main.java</file>
+            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/Auditorio.java</file>
             <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/TelaAdmin.java</file>
+            <file>file:/C:/Users/alves/Downloads/SistemaDeGestao/src/ExportadorCSV.java</file>
         </group>
     </open-files>
 </project-private>

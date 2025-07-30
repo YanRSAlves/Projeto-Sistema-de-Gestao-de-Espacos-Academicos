@@ -11,19 +11,19 @@ public class TelaAdmin extends JFrame {
     public TelaAdmin(Usuario admin) {
         this.admin = admin;
 
-        // --- Configurações da Janela ---
+        //Configurações da Janela
         setTitle("Painel do Administrador - Bem-vindo(a), " + admin.getNome());
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
 
-        // --- Painel de Botões (Menu Lateral) ---
+        //Painel de Botões (Menu Lateral)
         JPanel painelMenu = new JPanel();
         painelMenu.setLayout(new GridLayout(10, 1, 5, 5));
         painelMenu.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        // Criando os botões
+        //Criando os botões
         JButton botaoListarUsuarios = new JButton("Listar Usuários");
         JButton botaoCriarEspaco = new JButton("Criar Novo Espaço");
         JButton botaoListarEspacos = new JButton("Listar Espaços");
@@ -35,7 +35,7 @@ public class TelaAdmin extends JFrame {
         JButton botaoExportarCSV = new JButton("Exportar Reservas (CSV)");
         JButton botaoVerRelatorios = new JButton("Ver Relatórios");
 
-        // Adicionando os botões ao menu
+        //Adicionando os botões ao menu
         painelMenu.add(botaoListarUsuarios);
         painelMenu.add(botaoCriarEspaco);
         painelMenu.add(botaoListarEspacos);
@@ -49,13 +49,13 @@ public class TelaAdmin extends JFrame {
 
         add(painelMenu, BorderLayout.WEST);
 
-        // --- Painel de Conteúdo (Área Principal) ---
+        //Painel de Conteúdo (Área Principal) 
         painelConteudo = new JPanel(new BorderLayout());
         painelConteudo.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         painelConteudo.add(new JLabel("Selecione uma opção no menu à esquerda.", SwingConstants.CENTER));
         add(painelConteudo, BorderLayout.CENTER);
 
-        // --- AÇÕES DOS BOTÕES ---
+        //AÇÕES DOS BOTÕES
 
         botaoListarUsuarios.addActionListener(e -> atualizarTabelaUsuarios());
         botaoListarEspacos.addActionListener(e -> atualizarTabelaEspacos());
@@ -120,7 +120,7 @@ public class TelaAdmin extends JFrame {
                 atualizarTabelaUsuarios();
             }
         });
-        // Ação para o botão "Atualizar Espaço"
+        
         botaoAtualizarEspaco.addActionListener(e -> {
             if (tabelaExibida == null || !tabelaExibida.getModel().getColumnName(2).equals("Tipo")) {
                  JOptionPane.showMessageDialog(this, "Por favor, liste os espaços primeiro.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
@@ -140,26 +140,6 @@ public class TelaAdmin extends JFrame {
             }
         });
 
-        // Ação para o botão "Excluir Espaço"
-        botaoExcluirEspaco.addActionListener(e -> {
-            if (tabelaExibida == null || !tabelaExibida.getModel().getColumnName(2).equals("Tipo")) {
-                 JOptionPane.showMessageDialog(this, "Por favor, liste os espaços primeiro.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-                 return;
-            }
-            int linhaSelecionada = tabelaExibida.getSelectedRow();
-            if (linhaSelecionada == -1) {
-                JOptionPane.showMessageDialog(this, "Por favor, selecione um espaço na tabela para excluir.", "Aviso", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-            int idEspaco = (int) tabelaExibida.getValueAt(linhaSelecionada, 0);
-            String nomeEspaco = (String) tabelaExibida.getValueAt(linhaSelecionada, 1);
-            int resposta = JOptionPane.showConfirmDialog(this, "Tem certeza que deseja excluir o espaço '" + nomeEspaco + "'?", "Confirmar Exclusão", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-            if (resposta == JOptionPane.YES_OPTION) {
-                EspacoDAO.deletarEspaco(idEspaco);
-                JOptionPane.showMessageDialog(this, "Espaço excluído com sucesso.");
-                atualizarTabelaEspacos();
-            }
-        });
         
         // Ação para o botão "Atualizar Espaço"
         botaoAtualizarEspaco.addActionListener(e -> {
@@ -206,7 +186,6 @@ public class TelaAdmin extends JFrame {
             }
         });
         
-        // Ações para os outros botões (Atualizar Espaço, etc.) serão adicionadas aqui...
     }
 
     private void atualizarTabelaUsuarios() {
