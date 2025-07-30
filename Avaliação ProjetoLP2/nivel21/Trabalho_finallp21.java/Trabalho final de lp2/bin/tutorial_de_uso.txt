@@ -1,0 +1,79 @@
+============================
+TUTORIAL DE USO - SISTEMA DE GESTÃO DE ESPAÇOS ACADÊMICOS
+============================
+
+1. INICIANDO O SISTEMA
+----------------------
+- Execute a aplicação iniciando pela classe TelaLogin.
+- A tela de login solicitará seu email e senha.
+- Digite seu email e senha cadastrados.
+- Caso não tenha um usuário, peça para o administrador criar para você.
+
+2. LOGIN
+---------
+- Usuário Admin: acesso completo ao sistema.
+- Usuário Comum: acesso limitado (reservas e relatórios).
+
+3. MENU PRINCIPAL
+------------------
+- Admin terá as opções:
+  • Cadastrar Espaço
+  • Reservar Espaço
+  • Relatórios
+  • Gerenciar Usuários
+  • Sair
+
+- Usuário comum terá as opções:
+  • Reservar Espaço
+  • Relatórios
+  • Sair
+
+4. CADASTRO DE USUÁRIO (Admin)
+------------------------------
+- Vá para "Gerenciar Usuários" no menu admin.
+- Clique em "Adicionar Usuário".
+- Preencha nome, email, senha e tipo (admin ou usuario).
+- Clique em "Salvar".
+- Email deve ser único.
+
+5. CADASTRO DE ESPAÇO (Admin)
+-----------------------------
+- No menu admin, escolha "Cadastrar Espaço".
+- Preencha nome e tipo do espaço.
+- Salve para disponibilizar para reservas.
+
+6. RESERVA DE ESPAÇO
+--------------------
+- Selecione "Reservar Espaço" no menu.
+- Escolha o espaço desejado na lista.
+- Informe data no formato AAAA-MM-DD.
+- Informe hora de início e fim no formato HH:mm.
+- Clique em "Reservar".
+- O sistema verifica se o espaço está disponível no horário.
+
+7. RELATÓRIOS
+-------------
+- Selecione "Relatórios" no menu.
+- Será exibida uma tabela com todas as reservas realizadas.
+- Inclui informações de usuário, espaço, data e horários.
+
+8. SAIR
+--------
+- Clique em "Sair" para fechar a sessão e voltar ao login.
+
+EXEMPLO DE USO
+--------------
+1) Login como admin: admin@exemplo.com / senha123
+2) Cadastrar novo usuário com email usuario@exemplo.com
+3) Cadastrar novo espaço "Sala 101" do tipo "Sala de Aula"
+4) Fazer reserva para Sala 101 na data 2025-08-01 das 08:00 às 10:00
+5) Visualizar relatórios para conferir reservas
+6) Fazer logout e login como usuário comum para testar limitações
+
+IMPORTANTE
+----------
+- Sempre preencha todos os campos obrigatórios.
+- Datas e horários devem seguir os formatos indicados.
+- Reservas não podem ter horário de fim menor ou igual ao início.
+- Email não pode ser editado após cadastro.
+

@@ -1,0 +1,6 @@
+Laboratorio;1;Laboratório 101;40;Bloco D;20 computadores e projetor
+SalaAula;2;Sala 203;45;Bloco A;true
+QuadraEsportiva;3;Quadra Coberta;200;Área externa;Futsal
+SalaReuniao;4;Sala Reunião 1;12;Bloco B;Mesa redonda e TV
+Auditorio;5;Auditório Central;300;Bloco C;true
+

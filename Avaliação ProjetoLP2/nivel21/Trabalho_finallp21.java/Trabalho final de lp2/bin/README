@@ -1,0 +1,48 @@
+# Sistema de Gestão de Espaços Acadêmicos
+
+## Descrição
+Aplicação desktop em Java com Swing para gerenciar usuários, espaços acadêmicos e reservas. Possui controle de acesso via login, cadastro de usuários e espaços, reserva de horários e relatórios.
+
+## Funcionalidades
+- Login com autenticação de usuários (admin e comum)
+- Menu específico para admin e usuário comum
+- Cadastro, edição e listagem de usuários (admin)
+- Cadastro de espaços acadêmicos
+- Reserva de espaços por data e horário
+- Visualização de relatórios de reservas
+- Persistência em arquivos texto
+
+## Tecnologias
+- Java SE 17+
+- Swing (interface gráfica)
+- Manipulação de arquivos para armazenamento
+
+## Estrutura de Arquivos
+- `usuarios.txt` — dados dos usuários
+- `espacos.txt` — dados dos espaços
+- `reservas.txt` — dados das reservas
+- Logs de operações em arquivo texto
+
+## Como Executar
+1. Compile o projeto com JDK 17+.
+2. Execute a classe `TelaLogin` para iniciar o sistema.
+3. Realize login com um usuário válido.
+4. Navegue pelo menu conforme o perfil (admin ou usuário).
+
+## Observações
+- Senhas são armazenadas em texto plano (recomendado implementar hash para produção).
+- Dados são persistidos em arquivos de texto no formato CSV simples (`;` como separador).
+- O sistema segue padrão MVC básico com modelos, controladores e telas Swing.
+
+## Melhorias Futuras
+- Usar banco de dados relacional
+- Implementar criptografia de senha
+- Adicionar edição e exclusão de registros
+- Melhorar validações de entrada
+- Exportação de relatórios em PDF/Excel
+
+## Autores
+- Pedro luis silva Dias
+- Yan Rocha Silva Alves
+- Paulo Victor Licar Carvalho
+

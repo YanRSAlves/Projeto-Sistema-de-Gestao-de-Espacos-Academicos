@@ -1,0 +1,18 @@
+[2025-07-22 09:01] Usuario ID 1 fez login
+[2025-07-22 09:03] Usuario ID 1 reservou espaço ID 2
+[2025-07-23 10:22] Usuario ID 2 reservou espaço ID 1
+[2025-07-23 11:11] Usuario ID 3 fez login
+[2025-07-23 11:12] Usuario ID 3 reservou espaço ID 4
+[2025-07-23 14:00] Usuario ID 4 gerou relatório de reservas
+[2025-07-26 21:28] Usuario ID 1 fez login
+2025-07-27T20:04:51.010816400 - joao@email.com: Login realizado
+2025-07-27T22:29:18.644920 - maria@email.com: Login realizado
+2025-07-27T22:32:56.622881400 - maria@email.com: Login realizado
+2025-07-27T22:38:55.524274800 - maria@email.com: Login realizado
+2025-07-27T23:09:36.635768100;maria@email.com;Login realizado
+2025-07-27T23:24:32.600552200;maria@email.com;Login realizado
+2025-07-27T23:27:23.305015600;maria@email.com;Login realizado
+2025-07-27T23:28:17.151696700;maria@email.com;Reserva criada para espaço: Sala 203
+2025-07-27T23:34:20.682022300;joao@email.com;Login realizado
+2025-07-27T23:55:50.934948800;joao@email.com;Login realizado
+2025-07-29T22:59:33.246638400;carlos@email.com;Reserva criada para espaço: Auditório Central
